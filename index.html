@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Кодировка страницы -->
+	<meta charset="UTF-8">
+	<!-- Заголовок страницы в браузере -->
+	<title>CC | Currency Converter</title>
+	<!-- Подключение CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Адаптив -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- Фавикон -->
+	<link rel="shortcut icon" href="">
+</head>
+
+<body>
+	<main class="main">
+		<div class="content">
+			<div class="converter">
+				<div class="darkmode">
+					<button class="darkmode__button"></button>
+				</div>
+				<div class="converter__title">
+					Конвертер валют
+				</div>
+				<div class="converter__currency currency">
+					<div class="currency__items">
+						<div class="currency__item">
+							<div class="currency__name">
+								Курс USD
+							</div>
+							<div class="currency__value currency__value_usd">
+								--.--
+							</div>
+						</div>
+						<div class="currency__item">
+							<div class="currency__name">
+								Курс EUR
+							</div>
+							<div class="currency__value currency__value_eur">
+								--.--
+							</div>
+						</div>
+						<div class="currency__item">
+							<div class="currency__name">
+								Курс RUB
+								<p class="currency__name_little">100</p>
+							</div>
+							<div class="currency__value currency__value_rub">
+								--.--
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="converter__value value">
+					<div class="value__items">
+						<div class="value__item">
+							<div class="value__title">
+								Отдаю:
+							</div>
+							<div class="value__select">
+								<select name="currency" id="currencySelector"
+									class="value__selection value__selection_disabled" disabled>
+									<option class="value__option" value="1">BYN - Белорусский Рубль</option>
+								</select>
+							</div>
+							<div class="value__amount">
+								<input class="value__input value__input_sell" type="number" placeholder="0.00" value="">
+							</div>
+						</div>
+						<div class="value__item">
+							<div class="value__title">
+								Получаю:
+							</div>
+							<div class="value__select">
+								<select name="currency" id="currencySelector"
+									class="value__selection value__selection_currency">
+									<option class="value__option value__option_usd" value="1">USD - Доллар США
+									</option>
+									<option class="value__option value__option_eur" value="2">EUR - Евро</option>
+									<option class="value__option value__option_rub" value="3">RUB - Российский Рубль
+									</option>
+								</select>
+							</div>
+							<div class="value__amount">
+								<input class="value__input value__input_recieve" type="number" placeholder="0.00"
+									value="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="content">
+			<div class="footer__text">
+				<p>Курс валют на <span class="footer__todaydate">--.--.----</span></p>
+				<p class="footer__copyright">&copy; CC | Currency Converter 2022</p>
+			</div>
+		</div>
+	</footer>
+	<script src="js/scrypt.js"></script>
+
+</body>
+
+</html>

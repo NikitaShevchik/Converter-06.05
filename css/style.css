@@ -1,0 +1,359 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.main {
+  padding-top: 20px;
+}
+
+.content {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.converter {
+  border: 1px solid lightgray;
+  position: relative;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.converter__title {
+  font-size: 35px;
+  margin-top: 10px;
+}
+
+.converter__currency {
+  margin-top: 25px;
+}
+
+.converter__value {
+  margin-top: 25px;
+}
+
+.currency__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.currency__item {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33.333%;
+          flex: 1 1 33.333%;
+  margin-right: 10px;
+}
+
+.currency__item:last-child {
+  margin: 0;
+}
+
+.currency__name {
+  font-size: 20px;
+  position: relative;
+}
+
+.currency__value {
+  padding-top: 20px;
+  font-size: 35px;
+}
+
+.currency__name_little {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  display: block;
+  padding-top: 1px;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.value__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.value__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  margin-right: 35px;
+}
+
+.value__item:last-child {
+  margin: 0;
+}
+
+.value__title {
+  padding-bottom: 15px;
+  font-size: 14px;
+}
+
+.value__select {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.value__selection {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  padding: 0 0 0 5px;
+  font-size: 16px;
+}
+
+.value__selection_disabled {
+  background-color: rgba(189, 189, 189, 0.4);
+}
+
+.value__amount {
+  margin-top: 10px;
+  height: 40px;
+  line-height: 35px;
+  padding: 0 0 0 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.value__input {
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.footer {
+  padding-top: 20px;
+}
+
+.footer__text {
+  text-align: center;
+  font-size: 16px;
+}
+
+.footer__todaydate {
+  color: red;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.footer__copyright {
+  padding-top: 5px;
+  font-size: 12px;
+  color: lightgray;
+}
+
+/*-------------DARK MODE BUTTON----------------*/
+.darkmode {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  top: 28px;
+  right: 15px;
+  -webkit-animation: all 0.3 ease;
+          animation: all 0.3 ease;
+}
+
+.darkmode__button {
+  line-height: 30px;
+  background-color: #373737;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-size: 12px;
+  -webkit-animation: all 0.3 ease;
+          animation: all 0.3 ease;
+}
+
+.darkmode__button._daymode {
+  background-color: #fff;
+  color: #373737;
+  -webkit-animation: all 0.3 ease;
+          animation: all 0.3 ease;
+}
+
+/*-------------DARK THEME----------------*/
+body._dark {
+  background-color: #373737;
+  color: #fff;
+}
+
+body._dark .converter {
+  border: 1px solid #ffe600;
+}
+
+body._dark .currency__item {
+  border: 1px solid #ffe600;
+}
+
+body._dark .footer__todaydate {
+  color: #ffe600;
+}
+
+body._dark .value__select {
+  border: 1px solid #ffe600;
+}
+
+body._dark .value__amount {
+  border: 1px solid #ffe600;
+}
+
+body._dark .value__selection {
+  color: #fff;
+}
+
+body._dark .value__selection_disabled {
+  background-color: rgba(189, 189, 189, 0.2);
+}
+
+body._dark .value__input {
+  color: #fff;
+}
+
+body._dark .footer__copyright {
+  opacity: 0.3;
+}
+
+body._dark .value__option {
+  background-color: #373737;
+}
+
+/*-------------ADAPTIVE----------------*/
+@media (max-width: 479px) {
+  .value__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .value__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    margin: 0 0 20px 0;
+  }
+  .value__item:last-child {
+    margin: 0;
+  }
+  .currency__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .currency__item {
+    border: 1px solid lightgray;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    margin: 0 0 10px 0;
+  }
+  .currency__item:last-child {
+    margin: 0;
+  }
+  .darkmode {
+    top: -10px;
+  }
+  .converter {
+    border: none;
+  }
+  body._dark .converter {
+    border: none;
+  }
+  .currency__name_little {
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    top: 20px;
+  }
+}

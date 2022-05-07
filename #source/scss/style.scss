@@ -1,0 +1,268 @@
+// Обнуление стилей
+@import "nullstyle.scss";
+
+// Подключение шрифтов
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+//font-family: 'Roboto', sans-serif;
+
+//SCSS
+
+//MIXIN
+@mixin bordergrey {
+    border: 1px solid rgb(211, 211, 211);
+}
+// @include bordergrey;
+
+
+//NUMBER INPUT NO ARROWS
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+//
+.main {
+    padding-top: 20px;
+}
+.content {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.converter {
+    @include bordergrey;
+    position: relative;
+    border-radius: 10px;
+    padding: 15px;
+		&__title {
+            //font-weight: 700;
+            font-size: 35px;
+            margin-top: 10px;
+		}
+		&__currency {
+            margin-top: 25px;
+		}
+
+		&__value {
+            margin-top: 25px;
+		}
+}
+.currency {
+		&__items {
+            display: flex;   
+		}
+
+		&__item {
+            @include bordergrey;
+            border-radius: 5px;
+            padding: 20px;
+            flex: 1 1 33.333%;
+            margin-right: 10px;
+            &:last-child{
+                margin: 0;
+            }
+		}
+
+		&__name {
+            font-size: 20px;
+            position: relative;
+		}
+
+		&__value {
+            padding-top: 20px;
+            font-size: 35px;
+		}
+}
+.currency__name_little{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    display: block;
+    padding-top: 1px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+.value {
+		&__items {
+            display: flex;
+		}
+
+		&__item {
+            flex: 1 1 50%;
+            margin-right: 35px;
+            &:last-child{
+                margin: 0;
+            }
+		}
+
+		&__title {
+            padding-bottom: 15px;
+            font-size: 14px;
+		}
+
+		&__select {
+            @include bordergrey;
+            border-radius: 5px;
+		}
+        &__option{
+
+        }
+        &__selection{
+            width: 100%;
+            height: 40px;
+            background-color: transparent;
+            padding: 0 0 0 5px;
+            font-size: 16px;
+            &_disabled{
+                background-color: rgba(189, 189, 189, 0.4);
+            }
+        }
+
+		&__amount {
+            margin-top: 10px;
+            height: 40px;
+            line-height: 35px;
+            padding: 0 0 0 10px;
+            @include bordergrey;
+            border-radius: 5px;
+		}
+        &__input{
+            font-size: 16px;
+            background-color: transparent;
+        }
+}
+.footer {
+    padding-top: 20px;
+		&__text {
+            text-align: center;
+            font-size: 16px;
+		}
+		&__todaydate {
+            color: rgb(255, 0, 0);
+            font-weight: 700;
+            font-size: 20px;
+		}
+
+		&__copyright {
+            padding-top: 5px;
+            font-size: 12px;
+            color: rgb(211, 211, 211);
+		}
+}
+
+
+/*-------------DARK MODE BUTTON----------------*/
+.darkmode {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 28px;
+    right: 15px;
+    animation: all 0.3 ease;
+    &__button {
+        line-height: 30px;
+        background-color: #373737;
+        color: #fff;
+        border-radius: 5px;
+        padding: 0 20px;
+        font-size: 12px;
+        animation: all 0.3 ease;
+    }
+}
+.darkmode__button._daymode{
+    background-color: #fff;
+    color: #373737;
+    animation: all 0.3 ease;
+}
+
+
+/*-------------DARK THEME----------------*/
+body._dark{
+    background-color: #373737;
+    color: #fff;
+    .converter{
+        border: 1px solid #ffe600;
+    }
+    .currency__item{
+        border: 1px solid #ffe600;
+    }
+    .footer__todaydate{
+        color: #ffe600;
+    }
+    .value__select{
+        border: 1px solid #ffe600;
+    }
+    .value__amount{
+        border: 1px solid #ffe600;
+    }
+    .value__selection{
+        color: #fff;
+    }
+    .value__selection_disabled{
+        background-color: rgba(189, 189, 189, 0.2);
+    }
+    .value__input{
+        color: #fff;
+    }
+    .footer__copyright{
+        opacity: 0.3;
+    }
+    .value__option{
+        background-color: #373737;
+    }
+}
+
+/*-------------ADAPTIVE----------------*/
+@media (max-width: 479px) {
+    
+    .value {
+        &__items {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item {
+            flex: 1 1 100%;
+            margin: 0 0 20px 0;
+            &:last-child{
+                margin: 0;
+            }
+        }
+    }
+    .currency {
+		&__items {
+            display: flex;   
+            flex-wrap: wrap;
+		}
+
+		&__item {
+            @include bordergrey;
+            text-align: center;
+            border-radius: 5px;
+            padding: 20px;
+            flex: 1 1 100%;
+            margin: 0 0 10px 0;
+            &:last-child{
+                margin: 0;
+            }
+		}
+    }
+    .darkmode{
+        top: -10px;
+    }
+    .converter{
+        border: none;
+    }
+    body._dark{
+        .converter{
+            border: none;
+        }
+    }
+    .currency__name_little{
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: 20px;
+    }
+}
