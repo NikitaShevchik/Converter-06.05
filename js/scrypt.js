@@ -9,7 +9,7 @@ todayDate.innerHTML = date.toLocaleDateString();
 //console.log(fetch('https://www.nbrb.by/services/xmlexrates.aspx?ondate=01/31/2011'));
 
 
-let currency = { USD: '2.54', EUR: '2.67', RUB: '3' };
+let currency = { USD: '2.54', EUR: '2.65', RUB: '3.94' };
 
 
 const recieveCurrency = document.querySelector('.value__input_recieve');
